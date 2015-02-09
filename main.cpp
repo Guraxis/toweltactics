@@ -4,7 +4,7 @@
 #include <list>
 #include <sys/time.h>
 
-#include "nahoda.h"
+#include "main.h"
 #include "obrazek.h"
 
 #define RESX 800
@@ -25,7 +25,14 @@ int main(int argc, char *argv[])
 		SDL_FillRect(obrazovka->screen, NULL, 0);
 
 		barva(255,255,255);
-		cara(0,300,800,300);
+		for(int i=50; i<600; i+=50)
+		{
+			cara(150,i,650,i);
+		}
+		for(int i=150; i<700; i+=50)
+		{
+			cara(i,50,i,550);
+		}
 
 
 		SDL_Event event;
@@ -54,5 +61,4 @@ int main(int argc, char *argv[])
 			SDL_Delay(17-(t2-t1));
 		}
 	}
-
 }
